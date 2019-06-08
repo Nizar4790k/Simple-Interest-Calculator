@@ -4,26 +4,38 @@ List<String> p =['USD',"DOP"];
 
 void main ()=> runApp(
 
-    App()
+ App()
 
 );
 
 class App extends StatelessWidget {
 
 
+
+ static final controllerPrincipal = TextEditingController();
+  static final controllerRate = TextEditingController();
+  static final controllerTerm = TextEditingController();
+
+
+
+
   TextField txtPrincipal = TextField(
+
+    controller:controllerPrincipal,
 
     decoration: InputDecoration(
         hintText: "Enter the principal",
         labelText: "Principal",
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
-        )
+
     ),
 
+  )
   );
 
-  TextField txtRateInterest = TextField(
+
+  TextField txtRateOfInterest = TextField(
     decoration: InputDecoration(
         hintText: "Enter the rate of interest",
         labelText: "Rate of interest",
@@ -36,7 +48,7 @@ class App extends StatelessWidget {
   );
 
 
-  TextField txtTerm = TextField(
+  TextField txtTerm =TextField(
     decoration: InputDecoration(
         hintText: ("Enter the term"),
         labelText: "Term",
@@ -51,10 +63,9 @@ class App extends StatelessWidget {
 
   );
 
-    Text todoText = Text("Todo Text");
 
-    DropdownButton comboBox =  DropdownButton(items: null, onChanged: null);
-
+  DropdownButton comboBox =  DropdownButton(items: null, onChanged: null);
+  Text text= Text("Todo Text");
 
   @override
   Widget build(BuildContext context) {
@@ -96,12 +107,13 @@ class App extends StatelessWidget {
 
                 Padding(
                   padding: EdgeInsets.all(5),
-                  child:  txtPrincipal,
+                  child:txtPrincipal
+
                 ),
 
                 Padding(
                   padding: EdgeInsets.all(5),
-                  child:txtRateInterest
+                  child:txtRateOfInterest
                 ),
 
                 Container(
@@ -112,7 +124,7 @@ class App extends StatelessWidget {
 
                       Expanded(
 
-                        child: txtTerm,
+                        child:txtTerm
                       ),
 
                       Container(
@@ -121,9 +133,9 @@ class App extends StatelessWidget {
 
 
                       Expanded(
-                        child: comboBox
+                        child: comboBox,
 
-                      ),
+                      )
                     ],
 
                   ),
@@ -136,9 +148,7 @@ class App extends StatelessWidget {
                       children: [
 
 
-                        Expanded(child:RaisedButton(onPressed: (){
-
-                        }
+                        Expanded(child:RaisedButton(onPressed: (){debugPrint("calculating");}
                           , child: Text("Calculate"),
                           elevation: 4.0,
                           color: Colors.red,)),
@@ -163,7 +173,7 @@ class App extends StatelessWidget {
 
                 Padding(
                   padding: EdgeInsets.all(7),
-                  child: todoText,
+                  child: Text("Todo Text"),
                 )
 
 
