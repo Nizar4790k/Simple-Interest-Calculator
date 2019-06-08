@@ -12,6 +12,61 @@ class App extends StatelessWidget {
 
 
 
+ static final controllerPrincipal = TextEditingController();
+  static final controllerRate = TextEditingController();
+  static final controllerTerm = TextEditingController();
+
+
+
+
+  TextField txtPrincipal = TextField(
+
+    controller:controllerPrincipal,
+
+    decoration: InputDecoration(
+        hintText: "Enter the principal",
+        labelText: "Principal",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.0),
+
+    ),
+
+  )
+  );
+
+
+  TextField txtRateOfInterest = TextField(
+    decoration: InputDecoration(
+        hintText: "Enter the rate of interest",
+        labelText: "Rate of interest",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.0),
+
+        )
+
+    ),
+  );
+
+
+  TextField txtTerm =TextField(
+    decoration: InputDecoration(
+        hintText: ("Enter the term"),
+        labelText: "Term",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(5.0),
+
+
+
+
+        )
+    ),
+
+  );
+
+
+  DropdownButton comboBox =  DropdownButton(items: null, onChanged: null);
+  Text text= Text("Todo Text");
+
   @override
   Widget build(BuildContext context) {
 
@@ -52,33 +107,13 @@ class App extends StatelessWidget {
 
                 Padding(
                   padding: EdgeInsets.all(5),
-                  child:  TextField(
-
-                    decoration: InputDecoration(
-                        hintText: "Enter the principal",
-                        labelText: "Principal",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-                        )
-                    ),
-
-                  ),
+                  child:txtPrincipal
 
                 ),
 
                 Padding(
                   padding: EdgeInsets.all(5),
-                  child:TextField(
-                    decoration: InputDecoration(
-                        hintText: "Enter the rate of interest",
-                        labelText: "Rate of interest",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(5.0),
-
-                        )
-
-                    ),
-                  ),
+                  child:txtRateOfInterest
                 ),
 
                 Container(
@@ -89,20 +124,7 @@ class App extends StatelessWidget {
 
                       Expanded(
 
-                        child:TextField(
-                          decoration: InputDecoration(
-                              hintText: ("Enter the term"),
-                              labelText: "Term",
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(5.0),
-
-
-
-
-                              )
-                          ),
-
-                        ),
+                        child:txtTerm
                       ),
 
                       Container(
@@ -111,7 +133,7 @@ class App extends StatelessWidget {
 
 
                       Expanded(
-                        child: DropdownButton(items: null, onChanged: null),
+                        child: comboBox,
 
                       )
                     ],
